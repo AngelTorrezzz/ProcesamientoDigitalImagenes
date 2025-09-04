@@ -1,0 +1,36 @@
+function J = escala2Promedio(I)
+    [M,N] = size(I);
+    MJ = 2*M;
+    NJ = 2*N;
+    J = zeros(MJ,NJ);
+    %1a. copia de la imagen de entrada
+    J(1:2:MJ-1, 1:2:NJ-1) = I;
+
+    %As
+    for fil = 1:2:MJ-1
+        for col = 2:2:NJ-2
+            J(fil,col) = (J(fil,col-1) + J(fil,col+1))/2;
+        end
+    end
+
+    %Bs
+    for fil = 2:2:MJ-2
+        for col = 1:2:NJ-1
+            J(fil,col) = (J(fil-1,col-1) + J(fil+1,col))/2;
+        end
+    end
+
+    %Cs
+    for fil = 2:2:MJ-2
+        for col = 2:2:NJ-2
+            J(fil,col) = (J(fil-1,col-1) + J(fil+1,col+1))/2;
+        end
+    end
+
+    %La orilla
+    %Ultima fila
+    J(MJ,:) = J(MJ-1);
+    %Ultima columna = penuñtima columna
+    J(:,NJ) = J(:,NJ-1);
+
+
