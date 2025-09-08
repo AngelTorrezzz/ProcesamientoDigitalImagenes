@@ -30,7 +30,7 @@ function J = escala2Promedio(I)
     %La orilla
     %Ultima fila
     J(MJ,:) = J(MJ-1);
-    %Ultima columna = penuñtima columna
+    %Ultima columna = penultima columna
     J(:,NJ) = J(:,NJ-1);
 
 

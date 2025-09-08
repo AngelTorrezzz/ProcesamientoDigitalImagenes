@@ -10,6 +10,6 @@ B = escala2Simple(I);
 B = uint8(B); %Regresa al formato de imagen
 imtool(B);
 
-%C = escala2Promedio(I);
-%C = uint8(C); %Regresa al formato de imagen
-%imtool(C);
+C = escala2Promedio(I);
+C = uint8(C); %Regresa al formato de imagen
+imtool(C);
