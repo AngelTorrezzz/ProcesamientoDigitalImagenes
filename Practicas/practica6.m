@@ -2,18 +2,14 @@ fileIn = '../Imagenes/tools3.bmp';
 I = imread(fileIn);
 imtool(I,[]);
 
-J = escala2Simple(I);
-J = uint8(J); %Regresa al formato de imagen
-imtool(J);
+A = escala05Simple(I);
+A = uint8(A); %Regresa al formato de imagen
+imtool(A);
 
-%G = escala2Media(I);
-%G = uint8(G); %Regresa al formato de imagen
-%imtool(G);
+B = escala2Simple(I);
+B = uint8(B); %Regresa al formato de imagen
+imtool(B);
 
-%H = escalaUnMedio(I);
-%H = uint8(H); %Regresa al formato de imagen
-%imtool(H);
-
-%K = escala2Promedio(I);
-%K = uint8(K); %Regresa al formato de imagen
-%imtool(K);
+%C = escala2Promedio(I);
+%C = uint8(C); %Regresa al formato de imagen
+%imtool(C);
