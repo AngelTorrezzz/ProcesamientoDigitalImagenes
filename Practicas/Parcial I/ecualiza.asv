@@ -18,11 +18,12 @@ imtool(im1,[]);
 [M,N] = size(im1);
 imhist(im1);
 
-%
+% nk1: 
 [nk1,rk1] = imhist(im1);
 %[nk2,rk2] = imhist(im2);
 %[nk3,rk3] = imhist(im3);
 
+%
 tot1 = sum(nk1);
 %tot2 = sum(nk2);
 %tot3 = sum(nk2);
@@ -34,7 +35,7 @@ prk1 = nk1/tot1;
 
 sk1 = zeros(1,256);
 
-% T(rk) Suma acumulada
+% T(rk) - Suma acumulada
 acumprk1 = cumsum(prk1)*255;
 %acumprk2 = cumsum(prk2)*255;
 %acumprk3 = cumsum(prk3)*255;
@@ -46,10 +47,12 @@ acumprk1 = round(acumprk1);
 %acumprk2 = round(acumprk2);
 %acumprk3 = round(acumprk3);
 
-imNueva1 = uint8(acumprk1(im1+1));
+%
+imNueva1 = uint8(acumprk1(im1+1)); % +1 debido a
 %imNueva2 = uint8(acumprk2(im2+1));
 %imNueva3 = uint8(acumprk3(im3+1));
 
+%
 imtool(imNueva1);
 %imtool(imNueva2);
 %imtool(imNueva3);

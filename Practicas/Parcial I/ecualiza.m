@@ -18,17 +18,17 @@ imtool(im1,[]);
 [M,N] = size(im1);
 imhist(im1);
 
-%
+% nk1: numero de pixeles con intensidad rk1
 [nk1,rk1] = imhist(im1);
 %[nk2,rk2] = imhist(im2);
 %[nk3,rk3] = imhist(im3);
 
-%
+% Total de pixeles de la imagen
 tot1 = sum(nk1);
 %tot2 = sum(nk2);
 %tot3 = sum(nk2);
 
-% nk - Histograma normalizado
+%  - Histograma normalizado
 prk1 = nk1/tot1;
 %prk2 = nk2/tot2;
 %prk3 = nk3/tot3;
