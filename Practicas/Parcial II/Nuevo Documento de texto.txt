@@ -1,0 +1,2 @@
+A = uint8(A); % Convierte a tipo imagen (valores de 0 a 255)
+imshow(A);    % Muestra la "imagen"
