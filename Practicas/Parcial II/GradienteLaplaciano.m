@@ -31,7 +31,8 @@ g = J + Mask;
 
 %Paso 6 - Correccion gamma a g(x,y)
 gamma = 0.5;
-Resultante = double(g).^gamma;
+absoluto = abs(g); %Tenia valores negativos
+Resultante = double(absoluto).^gamma;
 
 % Desplegar varias imagenes
 figure;
@@ -44,4 +45,4 @@ subplot(3,2,6); imshow(g,[]); title('Paso 5');
 
 figure;
 subplot(1,2,1); imshow(ImgOrg,[]); title('Orginal');
-subplot(1,2,2); imshow(Resultante); title('Gradiente-Laplaciano');
+subplot(1,2,2); imshow(Resultante,[]); title('Gradiente-Laplaciano');
