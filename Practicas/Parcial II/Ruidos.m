@@ -20,8 +20,9 @@ subplot(2,2,4); imshow(JPoisson,[]); title('poisson');
 
 % Crear la imagen resultante
 [nfils, ncols] = size(ImgA);
-C = zeros(nfils, ncols);
-CM = zeros(nfils, ncols);
+CMediana = zeros(nfils, ncols);
+CMinimo = zeros(nfils, ncols);
+CMaximo = zeros(nfils, ncols);
 for i = 1:nfils
     for j = 1:ncols
         % 8 Vecinos
@@ -35,20 +36,19 @@ for i = 1:nfils
         % Obtener intensidades de toda la vecindad
         vecIntensidad = ImgA(vxV, vyV);
         vecIntensidad = vecIntensidad(:); % <-- aquí la corrección
-        C(i,j) = median(vecIntensidad);
-        C(i,j) = max(vecIntensidad);
-        C(i,j) = min(vecIntensidad);
+        CMediana(i,j) = median(vecIntensidad);
+        CMinimo(i,j) = max(vecIntensidad);
+        CMaximo(i,j) = min(vecIntensidad);
     end
 end
 
 % Desplegar varias imagenes
 figure;
 subplot(2,2,1); imshow(ImgA,[]); title('ImgA');
-subplot(2,2,2); imshow(C,[]); title('Mediana');
-subplot(2,2,3); imshow(C,[]); title('Maximo');
-subplot(2,2,4); imshow(C,[]); title('Minimo');
+subplot(2,2,2); imshow(CMediana,[]); title('Mediana');
+subplot(2,2,3); imshow(CMinimo,[]); title('Maximo');
+subplot(2,2,4); imshow(CMaximo,[]); title('Minimo');
         
-
 
 
 

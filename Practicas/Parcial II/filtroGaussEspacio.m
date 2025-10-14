@@ -1,7 +1,7 @@
-function G = filtroGaussEspacio(sigma)
+function G = FiltroGaussEspacio(sigma)
 %Gaussiano PasaBajas en el dominio del espacio
 
-n = ceil(6*sigma);
+n = ceil(6*sigma); %Techo
 if(mod(n,2)==0)
     n = n+1;
 end
@@ -11,7 +11,7 @@ cx = ceil(n/2);
 cy = ceil(n/2);
 disp(n)
 disp(cx)
-dips(cy)
+disp(cy)
 
 %n = 3
 
