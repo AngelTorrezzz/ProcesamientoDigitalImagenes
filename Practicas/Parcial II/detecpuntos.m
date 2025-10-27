@@ -1,13 +1,11 @@
 close all;
 
-%Frida Ximena Martine Lorenzo
 ImOrg = imread("../../IMAGENES/gel.bmp");
 Img1 = double(ImOrg);
 
 %Laplaciano
 WL=[1 1 1; 1 -8 1; 1 1 1];   
 ImgLap1=(imfilter(Img1,WL,'conv'));
-
 
 % Imprimir valores máximo y mínimo
 maxL=max(ImgLap1(:));

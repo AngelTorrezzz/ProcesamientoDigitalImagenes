@@ -13,7 +13,7 @@ Matriz = [
 % Semillas iniciales
 A = Matriz(3,2); % 22
 B = Matriz(3,4); % 28
-C = Matriz(3,6); % 39
+C = Matriz(3,6); % 40
 
 % Lista de semillas en orden
 Semillas = {A, B, C};
