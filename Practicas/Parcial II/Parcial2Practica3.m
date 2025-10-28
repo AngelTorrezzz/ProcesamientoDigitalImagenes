@@ -38,8 +38,8 @@ subplot(2,3,2);imshow(uint8(abs(Gx))); title('Derivada parcial en X');
 subplot(2,3,3);imshow(uint8(abs(Gy))); title('Derivada parcial en Y');
 subplot(2,3,4);imshow(uint8(Gmag)); title('Magnitud del Gradiente');
 
-figure;
-subplot(2,3,1);imshow(uint8(A)); title('Imagen Original');
-subplot(2,3,2);imshow(uint8(abs(Gxx))); title('Derivada parcial en X');
-subplot(2,3,3);imshow(uint8(abs(Gyy))); title('Derivada parcial en Y');
-subplot(2,3,4);imshow(uint8(Gmagg)); title('Magnitud del Gradiente');
+%figure;
+%subplot(2,3,1);imshow(uint8(A)); title('Imagen Original');
+%subplot(2,3,2);imshow(uint8(abs(Gxx))); title('Derivada parcial en X');
+%subplot(2,3,3);imshow(uint8(abs(Gyy))); title('Derivada parcial en Y');
+%subplot(2,3,4);imshow(uint8(Gmagg)); title('Magnitud del Gradiente');
