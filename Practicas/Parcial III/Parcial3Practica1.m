@@ -1,4 +1,8 @@
-close all;
+%Detectar puntos utilizando Laplaciano
+
+close all
+clear all
+imtool close all
 
 ImOrg = imread("../../Imagenes/gel.bmp");
 Img1 = double(ImOrg);

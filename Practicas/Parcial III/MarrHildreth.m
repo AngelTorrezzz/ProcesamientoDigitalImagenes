@@ -1,5 +1,7 @@
 close all
+clear all
 imtool close all
+
 %----------------------------Paso 1----------------------------
 %Matriz original
 I = [34 21 26 27 39 41;

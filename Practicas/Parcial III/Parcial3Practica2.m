@@ -1,25 +1,22 @@
-close all;
+%1. Realizar la detección de líneas con diferentes orientaciones aplicando filtrado con máscara de Laplaciano.
+%2. Realizar la detección de líneas horizontales aplicando filtrado con máscara de Gradiente-Parcial X.
+%3. Realizar la detección de líneas verticales aplicando filtrado con máscara de Gradiente-Parcial Y.
+%4. Realizar la detección de líneas a 45 aplicando filtrado con máscara de 45.
+%5. Realizar la detección de líneas a -45 aplicando filtrado con máscara de -45.
+%Utilizar la imagen de circuito.jpg
+
+close all
+clear all
+imtool close all
 
 ImOrg = imread("../../Imagenes/circuito.jpg");
 Img1 = double(ImOrg);
-
-function imgRes = imgResFunc(ImgLap1, T)
-    %Salidas:
-    % - 1 donde |L(x,y)| >= T
-    % - 0 en otro caso
-
-    %Imagen resultante inicializada con 0s
-    imgRes = zeros(size(ImgLap1));
-
-    %Condición del umbral
-    imgRes(ImgLap1 >= T) = 1;
-end
 
 %--------------------------Laplaciano--------------------------
 %Máscara del filtro Laplaciano
 WL=[1 1 1;
     1 -8 1;
-    1 1 1];   
+    1 1 1];  
 ImgLap1=(imfilter(Img1,WL,'conv'));
 
 %Calcular minimos y maximos despues de aplicar laplaciano
@@ -58,3 +55,15 @@ subplot(2,3,3);imshow(uint8(abs(Gx))); title('Gradiente-Parcial X');
 subplot(2,3,4);imshow(uint8(abs(Gy))); title('Gradiente-Parcial Y');
 subplot(2,3,5), imshow(G45,[]), title('Máscara de 45');
 subplot(2,3,6), imshow(GMenos45,[]), title('Máscara de -45');
+
+function imgRes = imgResFunc(ImgLap1, T)
+    %Salidas:
+    % - 1 donde |L(x,y)| >= T
+    % - 0 en otro caso
+
+    %Imagen resultante inicializada con 0s
+    imgRes = zeros(size(ImgLap1));
+
+    %Condición del umbral
+    imgRes(ImgLap1 >= T) = 1;
+end

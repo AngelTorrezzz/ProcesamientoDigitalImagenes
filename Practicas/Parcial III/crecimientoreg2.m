@@ -1,4 +1,6 @@
-clc; clear; close all;
+close all
+clear all
+imtool close all
 
 % Matriz original
 Matriz = [

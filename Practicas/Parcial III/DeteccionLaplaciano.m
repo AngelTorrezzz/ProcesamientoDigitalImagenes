@@ -1,6 +1,8 @@
-close all;
+close all
+clear all
+imtool close all
 
-ImOrg = imread("../../IMAGENES/gel.bmp");
+ImOrg = imread("../../Imagenes/gel.bmp");
 Img1 = double(ImOrg);
 
 %Máscara del filtro Laplaciano
