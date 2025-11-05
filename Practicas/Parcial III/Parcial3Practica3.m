@@ -36,8 +36,8 @@ WL=[1 1 1;
     1 -8 1;
     1 1 1];
 
-LaplacianoImg=imfilter(FiltradoGaussianoImg,WL,'symmetric');
-LaplacianoMatriz=imfilter(FiltradoPesadoMatriz,WL,'symmetric');
+LaplacianoImg=imfilter(FiltradoGaussianoImg,WL,'conv');
+LaplacianoMatriz=imfilter(FiltradoPesadoMatriz,WL,'conv');
 
 %----------------------------Paso 3 Cruces por 0---------------------------
 [nfils, ncols] = size(LaplacianoImg);
