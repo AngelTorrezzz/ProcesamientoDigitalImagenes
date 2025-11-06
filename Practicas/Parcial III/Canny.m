@@ -30,23 +30,25 @@ ParcialX1=imfilter(MatrizResultante,WX);
 WY=[-1 0 1; -2 0 2; -1 0 1];
 ParcialY1=imfilter(MatrizResultante,WY);
 
-%---------------------Paso 3 Supresion de NO Maximos-----------------------
-%Magnitud del gradiente de la imagen
+%Magnitud del gradiente
 MagnitudGradiente = sqrt(ParcialX1.*ParcialX1 + ParcialY1.*ParcialY1);
 
+%Direccion del gradiente
 
-%--------------------------------------------------------------------------------
+
+%---------------------Paso 3 Supresion de NO Maximos-----------------------
+
+
+%----------------------Paso 4 Histeresis de umbral:------------------------
+
+
+%--------------------------------------------------------------------------
 % Mostrar Matriz
 figure;
-subplot(3,2,1); imshow(MatrizResultante,[]);title("Matriz")
-subplot(3,2,2); imshow(ParcialX1,[]);title("ParcialX")
-subplot(3,2,3); imshow(ParcialY1,[]);title("ParcialY")
-subplot(3,2,4); imshow(MagnitudGradiente,[]);title("Magnitud Gradiente")
-
-figure; imshow(MatrizResultante,[]);
-figure; imshow(ParcialX1,[]);
-figure; imshow(ParcialY1,[]);
-figure; imshow(MagnitudGradiente,[]);
+subplot(2,2,1); imshow(MatrizResultante,[]);title("Matriz")
+subplot(2,2,2); imshow(ParcialX1,[]);title("ParcialX")
+subplot(2,2,3); imshow(ParcialY1,[]);title("ParcialY")
+subplot(2,2,4); imshow(MagnitudGradiente,[]);title("Magnitud Gradiente")
 
 %--------------------------------------------------------------------------------
 % Mostrar Imagen
