@@ -6,13 +6,13 @@ clear all
 imtool close all
 
 %Imagen (si se usa una imagen real)
-Img = imread("../../Imagenes/bola.bmp");
+Img = imread("../../Imagenes/manzana.bmp");
 Img = im2double(Img);
 
 
 %-----------------------------Paso 1 Gaussiano-----------------------------
 % No aplicar gaussiano cuando es matriz simulada
-sigma = 3.0;
+sigma = 1.0;
 W3 = FiltroGaussEspacio(sigma);
 factor = sum(sum(W3));
 W3 = FiltroGaussEspacio(sigma)*1/factor;
@@ -67,7 +67,7 @@ end
 
 %----------------------Paso 4 Histeresis de umbral------------------------
 % Umbrales (ajustables)
-Tmax = max(max(Supresion)) * 0.25;
+Tmax = max(max(Supresion)) * 0.15;
 Tmin = Tmax * 0.5;
 
 [filas, columnas] = size(Supresion);
