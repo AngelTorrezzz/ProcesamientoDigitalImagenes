@@ -1,3 +1,6 @@
+%Implementar en MATLAB el detector de bordes de Canny. Considerar el 
+%algoritmo revisado en clase y realizar la prueba con tres imágenes diferentes.
+
 close all
 clear all
 imtool close all
