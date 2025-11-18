@@ -1,4 +1,3 @@
-
 A = [
    21,21,26,27,38,41;
    22,22,26,29,39,40;
@@ -8,8 +7,8 @@ A = [
    23,22,26,28,42,36;
 ];
 
-%Sea To = 3, vamos a realiar otra matriz, divida en dos grupos, 1 es menor
-%que To y 2 los que son mayores a To
+% Sea To = 3, vamos a realiar otra matriz, divida en dos grupos, 1 es menor
+% que To y 2 los que son mayores a To
 
 T0=23;
 % Crear matriz binaria B basada en To
